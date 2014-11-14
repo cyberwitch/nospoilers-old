@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %} {{ show['name'] }} {% endblock %}
+{% block head %}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/show.js') }}"></script>
+{% endblock %}
+{% block body %}
+    <h1>{{ show['name'] }} {% if show['year'] %} ({{ show['year'] }}) {% endif %}</h1>
+
+    <h3>{% if show['image_url'] %} <img src="{{ show['image_url'] }}"> {% endif %}{{ show['overview'] }}</h3>
+
+    <div id="seasons" data-show-id="{{ show['id'] }}">
+        {% for season in show['seasons'][1:] %}
+            <h3 id="s{{ season['season_number'] }}">Season {{ season['season_number'] }}</h3>
+            <div class="empty"></div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

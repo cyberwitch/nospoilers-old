@@ -1,0 +1,7 @@
+.loading::after {
+    content: url('img/ajax-loader.gif');
+}
+
+.ui-menu-item img {
+    width: 46px;
+}

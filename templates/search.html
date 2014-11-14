@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}Search{% endblock %}
+{% block head %}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/search.js') }}"></script>
+{% endblock %}
+{% block body %}
+    <form>
+        <input type="text" name="query" value="{{ query }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <ul>
+        {% for show in shows %}
+            <li>
+                <a href="{{ url_for('show', tmdb_id=show['id']) }}">
+                    {% if show['image_url'] %} <img src="{{ show['image_url'] }}"> {% endif %}
+                    {{ show['name'] }} {% if show['year'] %} ({{ show['year'] }}) {% endif %}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
