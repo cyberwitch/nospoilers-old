@@ -1,0 +1,1 @@
+web: gunicorn nospoilers:app --log-file=-

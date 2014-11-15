@@ -2,7 +2,7 @@ from json import dumps
 
 from flask import Flask, render_template, request
 
-from nospoilers.tmdbutils import TMDBUtils
+from tmdbutils import TMDBUtils
 
 
 app = Flask(__name__)
