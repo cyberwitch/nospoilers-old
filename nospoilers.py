@@ -1,6 +1,9 @@
-from flask import Flask, render_template, request
-from tmdbutils import TMDBUtils
 from json import dumps
+
+from flask import Flask, render_template, request
+
+from nospoilers.tmdbutils import TMDBUtils
+
 
 app = Flask(__name__)
 tmdb = TMDBUtils('1c9fdf67f8e8f9df79a09809f463bc25')
